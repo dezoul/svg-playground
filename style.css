@@ -39,7 +39,8 @@ div:not(.guideDiv){
 path{
     stroke-width: 1;
     stroke:red;
-    transition: .01s;
+    transition: 1s;
+    fill: rgba(0,0,0,0)
 }
 
 .active path{

@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <title>SVG.js</title>
-    <link rel="stylesheet" href="/style.css">
-    <script src="/main.js" defer></script>
-</head>
-
-<body>
+---
+layout: default 
+---
 
 
 <section>
@@ -17,12 +10,11 @@
     </h2>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, laborum autem inventore praesentium eaque veritatis aliquam enim adipisci impedit fuga! Pariatur sed adipisci quis, quos non esse illo enim similique.</p>
     <div class="guideDiv">
-        <svg viewBox="0 0 100 100">
-        <path d="M10 10 L90 90 L90 89 L89 90 L90 90"></path> 
-        </svg>
+        {% include arrow-down-right.html %}
     
     </div>
 </div>
+
 <div class="center arrow-parent">
     <h2>
         box 2
@@ -30,9 +22,7 @@
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, laborum autem inventore praesentium eaque
         veritatis aliquam enim adipisci impedit fuga! Pariatur sed adipisci quis, quos non esse illo enim similique.</p>
         <div class="guideDiv">
-            <svg viewBox="0 0 100 100">
-                <path d="M10 10 L90 90 L90 89 L89 90 L90 90"></path>
-            </svg>
+            {% include arrow-down-right.html %}
         </div>
 
 </div>
@@ -43,9 +33,7 @@
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, laborum autem inventore praesentium eaque
         veritatis aliquam enim adipisci impedit fuga! Pariatur sed adipisci quis, quos non esse illo enim similique.</p>
         <div class="guideDiv">
-            <svg viewBox="0 0 100 100">
-                <path d="M10 10 L90 90 L90 89 L89 90 L90 90"></path>
-            </svg>
+            {% include arrow-down-right.html %}
         </div>
     </div>
 <div class="center arrow-parent">
@@ -54,9 +42,9 @@
     </h2>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae, laborum autem inventore praesentium eaque
         veritatis aliquam enim adipisci impedit fuga! Pariatur sed adipisci quis, quos non esse illo enim similique.</p>
-    <svg viewBox="0 0 100 100">
-        <path d="M10 10 L90 90 L90 89 L89 90 L90 90"></path>
-    </svg>
+    <div class="guideDiv">
+        {% include arrow-down-right.html %}
+    </div>
 </div>
 <div class="arrow-parent">
     <h2>
@@ -69,18 +57,3 @@
 
 </section>
 
-
-    <style>
-
-        body{
-            /* padding-top: 100vh; */
-            min-height: 500vh;}
-
-    </style>
-
-    <script>
-
-    </script>
-</body>
-
-</html>

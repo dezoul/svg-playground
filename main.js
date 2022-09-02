@@ -15,25 +15,31 @@ arrows.forEach(arrow => {
 
 })
 
+
+
 function checkSlide(e) {
-    console.log(window.innerHeight)
+    // console.log(window.innerHeight)
     arrows.forEach((arrow) => {
-        var rect = arrow.getBoundingClientRect(); 
-        var path = arrow.querySelector("path");
-        var halfWindow = window.innerHeight / 2
-        var length = path.getTotalLength();
+
+        const rect = arrow.getBoundingClientRect(); 
+        const path = arrow.querySelector("path");
+        const compleatPoint = (window.innerHeight *  .3);
+        const length = path.getTotalLength();
         
-        // console.log(window.innerHeight / 2)
-        console.log(rect.top)
-        // console.log(length)
-        console.log(rect.top / halfWindow)
+        if (arrow === arrows[0]) {
+            console.log(rect.top);
+            console.log(compleatPoint);
+            console.log((length * ((rect.top - compleatPoint) / compleatPoint)))
+            // console.log((window.innerHeight - rect.top))
+            // console.log(compleatPoint)
+        }
         
-        if (halfWindow > rect.top) {
+        if (compleatPoint > rect.top) {
             path.style.strokeDashoffset = 0
-        } else if ((window.innerHeight * .75 ) < rect.top) {
+        } else if (((rect.top - compleatPoint) / compleatPoint) > 1) {
             path.style.strokeDashoffset = length;
         } else {
-            path.style.strokeDashoffset = (length * ((rect.top - halfWindow)) / (halfWindow));
+            path.style.strokeDashoffset = (length * ((rect.top - compleatPoint) / compleatPoint)) ;
 
         }
 
@@ -47,7 +53,7 @@ function checkSlide(e) {
 window.addEventListener('scroll', debounce(checkSlide))
 
 
-function debounce(func, wait = 20, immediate = true) {
+function debounce(func, wait = 2, immediate = true) {
     var timeout;
     return function () {
         var context = this, args = arguments;
@@ -62,23 +68,3 @@ function debounce(func, wait = 20, immediate = true) {
     };
 }
 
-
-
-
-// function checkSlide(e) {
-//     images.forEach(sliderImage => {
-
-//         // half visable from the bottom point of each image 
-//         const slideInAt = (window.scrollY + window.innerHeight) - sliderImage.height / 2;
-//         // the bottom of the image
-//         const imageBottom = sliderImage.offsetTop + sliderImage.height;
-//         const isHalfShown = slideInAt > sliderImage.offsetTop;
-//         const isNotScrolledPast = window.scrollY < imageBottom;
-//         if (isHalfShown && isNotScrolledPast) {
-//             sliderImage.classList.add('active')
-//         } else {
-//             sliderImage.classList.remove('active')
-//         }
-//         console.log(sliderImage.height);
-//     })
-// }
